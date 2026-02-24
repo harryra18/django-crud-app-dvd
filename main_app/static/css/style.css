@@ -1,0 +1,131 @@
+body {
+  background-color: #141414;
+  color: #ffffff;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+nav {
+  background-color: #000000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 a {
+  color: #E50914;
+  text-decoration: none;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #ffffff;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #E50914;
+}
+
+main {
+  padding: 40px;
+}
+
+button {
+  background-color: #E50914;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #f40612;
+}
+
+.dvd-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.dvd-card {
+  background-color: #1f1f1f;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dvd-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.dvd-poster {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.dvd-card h3 {
+  margin: 12px 0 6px 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.dvd-card p {
+  font-size: 14px;
+  color: #b3b3b3;
+}
+
+a {
+  text-decoration: none;
+}
+
+form input,
+form textarea,
+form select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  background-color: #2a2a2a;
+  border: 1px solid #333;
+  color: white;
+  border-radius: 4px;
+}
+
+form input:focus,
+form textarea:focus,
+form select:focus {
+  outline: none;
+  border-color: #E50914;
+}
+
+a {
+  color: #ffffff;
+}
+
+a,
+a:visited {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+a:hover,
+a:active {
+  color: #E50914 !important;
+}
+
+a:active {
+  color: #E50914;
+}

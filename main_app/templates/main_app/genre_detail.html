@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ object.name }} Movies</h2>
+
+<div class="dvd-grid">
+  {% for dvd in object.dvds.all %}
+    {% if dvd.user == request.user %}
+      <div class="dvd-card">
+        <a href="{% url 'dvd-detail' dvd.id %}">
+          {% if dvd.image_url %}
+            <img src="{{ dvd.image_url }}" class="dvd-poster">
+          {% endif %}
+          <h3>{{ dvd.title }}</h3>
+        </a>
+      </div>
+    {% endif %}
+  {% empty %}
+    <p>No movies in this genre.</p>
+  {% endfor %}
+</div>
+
+<a href="{% url 'genre-list' %}">Back to Genres</a>
+{% endblock %}

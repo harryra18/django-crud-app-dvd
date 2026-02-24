@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>My DVD Collection</h2>
+
+<a href="{% url 'genre-list' %}">View Genre Library</a> |
+<a href="{% url 'dvd-create' %}">Add New DVD</a>
+
+<div class="dvd-grid">
+  {% for dvd in object_list %}
+    <div class="dvd-card">
+      <a href="{% url 'dvd-detail' dvd.id %}">
+        {% if dvd.image_url %}
+          <img src="{{ dvd.image_url }}" class="dvd-poster">
+        {% endif %}
+        <h3>{{ dvd.title }}</h3>
+      </a>
+      <p>{{ dvd.genre.name }}</p>
+    </div>
+  {% empty %}
+    <p>No DVDs yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}

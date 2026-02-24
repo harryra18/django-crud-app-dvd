@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to DVDFlix 🎬</h1>
+<p>Manage your DVD collection and see movie posters automatically fetched via MovieGlu API.</p>
+
+{% if user.is_authenticated %}
+  <p>Go to <a href="{% url 'dvd-index' %}">My DVDs</a> to view your collection.</p>
+{% else %}
+  <p><a href="{% url 'signup' %}">Sign up</a> or <a href="{% url 'login' %}">Login</a> to start collecting DVDs.</p>
+{% endif %}
+{% endblock %}

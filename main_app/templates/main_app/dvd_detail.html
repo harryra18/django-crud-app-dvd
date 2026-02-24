@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ object.title }}</h2>
+
+{% if object.image_url %}
+  <img src="{{ object.image_url }}" alt="{{ object.title }}" style="max-width:400px;">
+{% endif %}
+
+<p><strong>Director:</strong> {{ object.director }}</p>
+<p><strong>Genre:</strong> {{ object.genre }}</p>
+<p><strong>Release Year:</strong> {{ object.release_year }}</p>
+<p><strong>Description:</strong> {{ object.description }}</p>
+
+<a href="{% url 'dvd-update' object.id %}">Edit</a> |
+<a href="{% url 'dvd-delete' object.id %}">Delete</a> |
+<a href="{% url 'dvd-index' %}">Back to My DVDs</a>
+{% endblock %}

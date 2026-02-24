@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>
+  {% if object %}Edit DVD{% else %}Add New DVD{% endif %}
+</h2>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">{% if object %}Update{% else %}Create{% endif %}</button>
+</form>
+
+<a href="{% url 'dvd-index' %}">Back to My DVDs</a>
+{% endblock %}
