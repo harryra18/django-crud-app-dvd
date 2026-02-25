@@ -17,10 +17,8 @@ import os
 from dotenv import load_dotenv
 import dj_database_url
 
+load_dotenv()
 
-if os.path.exists(BASE_DIR / ".env"):
-    from dotenv import load_dotenv
-    load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,3 +130,7 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'dvd-index'
 LOGOUT_REDIRECT_URL = 'login'
+
+if os.path.exists(BASE_DIR / ".env"):
+    from dotenv import load_dotenv
+    load_dotenv()
